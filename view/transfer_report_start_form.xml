@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Print Move Report ">
+    <label name="company"/>
+    <field name="company"/>
+    <newline/>
+    <label name="date"/>
+    <field name="date"/>
+    <label name="date_end"/>
+    <field name="date_end"/>
+    <newline/>
+    <label name="all_products"/>
+    <field name="all_products"/>
+    <newline/>
+    <label name="product"/>
+    <field name="product"/>
+
+</form>

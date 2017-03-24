@@ -1,0 +1,215 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:move_product_stock.start,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:move_product_stock.start,total:"
+msgid "Total Products"
+msgstr "Cantidad de Productos"
+
+msgctxt "field:print_report_transfer.start,all_products:"
+msgid "All products"
+msgstr "Todos los productos"
+
+msgctxt "field:print_report_transfer.start,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt "field:print_report_transfer.start,date:"
+msgid "Date"
+msgstr "Fecha"
+
+msgctxt "field:print_report_transfer.start,date_end:"
+msgid "Date End"
+msgstr "Fecha Fin"
+
+msgctxt "field:print_report_transfer.start,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:print_report_transfer.start,product:"
+msgid "Product"
+msgstr "Producto"
+
+msgctxt "field:product.template,total_warehouse:"
+msgid "Total Products Warehouse"
+msgstr "Total de Productos en Bodega"
+
+msgctxt "field:product.template,transferidos:"
+msgid "Total Transferidos"
+msgstr ""
+
+msgctxt "help:move_product_stock.start,total:"
+msgid "Total Products Move"
+msgstr "Total de Productos que se moverán "
+
+msgctxt "model:ir.action,name:report_transfer"
+msgid "Reporte de Productos Transferidos"
+msgstr ""
+
+msgctxt "model:ir.action,name:wizard_move_product_stock"
+msgid "Tranferir a Bodega de Ventas"
+msgstr ""
+
+msgctxt "model:ir.action,name:wizard_transfer_report"
+msgid "Reporte de Productos Transferidos"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:menu_transfer_report"
+msgid "Reporte de Productos Transferidos"
+msgstr ""
+
+msgctxt "model:move_product_stock.start,name:"
+msgid "Move Product Stock Start"
+msgstr "Mover Productos "
+
+msgctxt "model:print_report_transfer.start,name:"
+msgid "Print Report Transfer Start"
+msgstr "Imprimir Reporte de Transferencia de Productos"
+
+msgctxt "report:report_transfer:"
+msgid "$"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "("
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid ")"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid ","
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "-"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "/"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "/for"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "00/00/0000"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "00:00:00"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "???"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "COMPRADOS"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "CÓDIGO"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "DISPONIBLES PARA VENTA"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "INVENTARIO GENERAL DE MERCADERIA  -"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "PRODUCTO"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "Page"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "TOTAL EN BODEGA"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "TRANSFERIDOS"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "VENDIDOS"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "company.party.name"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "fecha"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "fecha_fin"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "for each=\"product in products_all\""
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.code1"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.comprados"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.name"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.total"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.total_warehouse"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.transferidos"
+msgstr ""
+
+msgctxt "report:report_transfer:"
+msgid "product.vendidos"
+msgstr ""
+
+msgctxt "view:move_product_stock.start:"
+msgid "Move Product"
+msgstr "Mover Producto"
+
+msgctxt "view:print_report_transfer.start:"
+msgid "Print Move Report "
+msgstr "Reporte de Movimiento de Productos"
+
+msgctxt "wizard_button:move_product_stock,start,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "wizard_button:move_product_stock,start,move_:"
+msgid "Move"
+msgstr "Mover"
+
+msgctxt "wizard_button:print_report_transfer,start,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "wizard_button:print_report_transfer,start,print_:"
+msgid "Print"
+msgstr "Imprimir"

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="stock_view_tree">
+            <field name="model">product.template</field>
+            <field name="inherit" ref="nodux_stock_one.stock_view_tree"/>
+            <field name="name">stock_tree</field>
+        </record>
+
+        <!--REPORTE TOTAL DE PRODUCTOS TRANSFERIDOS-->
+        <record model="ir.ui.view" id="print_transfer_report_start_view_form">
+            <field name="model">print_report_transfer.start</field>
+            <field name="type">form</field>
+            <field name="name">transfer_report_start_form</field>
+        </record>
+        <record model="ir.action.wizard" id="wizard_transfer_report">
+            <field name="name">Reporte de Productos Transferidos</field>
+            <field name="wiz_name">print_report_transfer</field>
+        </record>
+        <record model="ir.action.report" id="report_transfer">
+            <field name="name">Reporte de Productos Transferidos</field>
+            <field name="model"></field>
+            <field name="report_name">report_transfer</field>
+            <field name="report">nodux_purchase_product_stock_one/report_transfer.ods</field>
+        </record>
+        <menuitem parent="nodux_stock_one.menu_stock" action="wizard_transfer_report"
+            id="menu_transfer_report" icon="tryton-print"/>
+
+    </data>
+</tryton>
