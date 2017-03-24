@@ -172,7 +172,6 @@ class ReportTransfer(Report):
                         if line.product.template.id == product.id:
                             vendidos += Decimal(line.quantity)
 
-
                 product_line['code1'] = product.code1
                 product_line['name'] = product.name
                 product_line['total_warehouse'] = product.total_warehouse
@@ -181,7 +180,6 @@ class ReportTransfer(Report):
                 product_line['vendidos'] = vendidos
                 product_line['transferidos'] = comprados - product.total_warehouse
                 products_all.append(product_line)
-
 
         if company.timezone:
             timezone = pytz.timezone(company.timezone)
@@ -192,8 +190,6 @@ class ReportTransfer(Report):
 
         report_context = super(ReportTransfer, cls).get_context(records, data)
 
-        for p in products_all:
-            print "p", p
         report_context['company'] = company
         report_context['hora'] = hora.strftime('%H:%M:%S')
         report_context['fecha_im'] = hora.strftime('%d/%m/%Y')
