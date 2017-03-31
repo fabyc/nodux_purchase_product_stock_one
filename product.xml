@@ -33,5 +33,19 @@ this repository contains the full copyright notices and license terms. -->
             <field name="action" ref="wizard_move_product_stock"/>
         </record>
 
+        <!--PERMISOS -->
+        <record model="res.group" id="group_trans_product">
+              <field name="name">Nodux - Transferir Productos</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_trans_product">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_trans_product"/>
+        </record>
+
+        <record model="res.user-res.group" id="user_trigger_group_trans_product">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_trans_product"/>
+        </record>
+
     </data>
 </tryton>

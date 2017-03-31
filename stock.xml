@@ -28,5 +28,6 @@ this repository contains the full copyright notices and license terms. -->
         <menuitem parent="nodux_stock_one.menu_stock" action="wizard_transfer_report"
             id="menu_transfer_report" icon="tryton-print"/>
 
+        
     </data>
 </tryton>

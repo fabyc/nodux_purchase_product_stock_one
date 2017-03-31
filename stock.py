@@ -25,9 +25,117 @@ from datetime import datetime,timedelta
 import time
 
 
-__all__ = ['PrintReportTransferStart', 'PrintReportTransfer','ReportTransfer']
-
+__all__ = ['PrintReportTransferStart', 'PrintReportTransfer','ReportTransfer',
+'Stock', 'StockOut']
+__metaclass__ = PoolMeta
 _ZERO = Decimal(0)
+
+
+class Stock():
+    'Stock'
+    __name__ = 'stock.stock'
+
+    @classmethod
+    @ModelView.button
+    @Workflow.transition('done')
+    def done(cls, stocks):
+        for stock in stocks:
+            cls.raise_user_warning('done%s' % stock.reference,
+                   'Esta seguro de confirmar el inventario')
+            if not stock.reference:
+                Company = Pool().get('company.company')
+                company = Company(Transaction().context.get('company'))
+                reference = company.sequence_stock
+                company.sequence_stock = company.sequence_stock + 1
+                company.save()
+
+                if len(str(reference)) == 1:
+                    reference_end = '00000000' + str(reference)
+                elif len(str(reference)) == 2:
+                    reference_end = '0000000' + str(reference)
+                elif len(str(reference)) == 3:
+                    reference_end = '000000' + str(reference)
+                elif len(str(reference)) == 4:
+                    reference_end = '00000' + str(reference)
+                elif len(str(reference)) == 5:
+                    reference_end = '0000' + str(reference)
+                elif len(str(reference)) == 6:
+                    reference_end = '000' + str(reference)
+                elif len(str(reference)) == 7:
+                    reference_end = '00' + str(reference)
+                elif len(str(reference)) == 8:
+                    reference_end = '0' + str(reference)
+                elif len(str(reference)) == 9:
+                    reference_end = '' + str(reference)
+
+                stock.reference = str(reference_end)
+                stock.save()
+
+                for line in stock.lines:
+                    product = line.product.template
+                    if product.type == "goods":
+                        if product.total_warehouse == None:
+                            product.total_warehouse = Decimal(line.quantity)
+                        else:
+                            product.total_warehouse = Decimal(line.product.template.total_warehouse) + Decimal(line.quantity)
+                        product.save()
+        cls.write([s for s in stocks], {
+                'state': 'done',
+                })
+
+class StockOut():
+    'Stock Out'
+    __name__ = 'stock.stock_out'
+    _rec_name = 'reference'
+
+    @classmethod
+    @ModelView.button
+    @Workflow.transition('done')
+    def done(cls, stocks):
+        for stock in stocks:
+            cls.raise_user_warning('done%s' % stock.reference,
+                   'Esta seguro de confirmar el inventario')
+            if not stock.reference:
+                Company = Pool().get('company.company')
+                company = Company(Transaction().context.get('company'))
+                reference = company.sequence_stock_out
+                company.sequence_stock_out = company.sequence_stock_out + 1
+                company.save()
+
+                if len(str(reference)) == 1:
+                    reference_end = '00000000' + str(reference)
+                elif len(str(reference)) == 2:
+                    reference_end = '0000000' + str(reference)
+                elif len(str(reference)) == 3:
+                    reference_end = '000000' + str(reference)
+                elif len(str(reference)) == 4:
+                    reference_end = '00000' + str(reference)
+                elif len(str(reference)) == 5:
+                    reference_end = '0000' + str(reference)
+                elif len(str(reference)) == 6:
+                    reference_end = '000' + str(reference)
+                elif len(str(reference)) == 7:
+                    reference_end = '00' + str(reference)
+                elif len(str(reference)) == 8:
+                    reference_end = '0' + str(reference)
+                elif len(str(reference)) == 9:
+                    reference_end = '' + str(reference)
+
+                stock.reference = str(reference_end)
+                stock.save()
+
+                for line in stock.lines:
+                    product = line.product.template
+                    if product.type == "goods":
+                        if product.total_warehouse == None:
+                            product.total_warehouse = Decimal(0.0) - Decimal(line.quantity)
+                        else:
+                            product.total_warehouse = Decimal(line.product.template.total_warehouse) - Decimal(line.quantity)
+                        product.save()
+        cls.write([s for s in stocks], {
+                'state': 'done',
+                })
+
 
 class PrintReportTransferStart(ModelView):
     'Print Report Transfer Start'

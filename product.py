@@ -46,6 +46,25 @@ class MoveProductStock(Wizard):
         super(MoveProductStock, cls).__setup__()
 
     def default_start(self, fields):
+        def in_group():
+            origin = str(self)
+            pool = Pool()
+            ModelData = pool.get('ir.model.data')
+            User = pool.get('res.user')
+            Group = pool.get('res.group')
+            Module = pool.get('ir.module')
+            group = Group(ModelData.get_id('nodux_purchase_product_stock_one',
+                            'group_trans_product'))
+            transaction = Transaction()
+            user_id = transaction.user
+            if user_id == 0:
+                user_id = transaction.context.get('user', user_id)
+            if user_id == 0:
+                return True
+            user = User(user_id)
+            return origin and group in user.groups
+        if not in_group():
+            self.raise_user_error('No tiene permisos para transferir productos')
 
         return {
             'total': Decimal(0.0),

@@ -12,6 +12,8 @@ def register():
         Template,
         MoveProductStockStart,
         PrintReportTransferStart,
+        Stock,
+        StockOut,
         module='nodux_purchase_product_stock_one', type_='model')
     Pool.register(
         WizardPurchasePayment,
