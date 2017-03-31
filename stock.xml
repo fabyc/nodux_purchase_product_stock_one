@@ -24,10 +24,11 @@ this repository contains the full copyright notices and license terms. -->
             <field name="model"></field>
             <field name="report_name">report_transfer</field>
             <field name="report">nodux_purchase_product_stock_one/report_transfer.ods</field>
+            <field name="template_extension">ods</field>
         </record>
         <menuitem parent="nodux_stock_one.menu_stock" action="wizard_transfer_report"
             id="menu_transfer_report" icon="tryton-print"/>
 
-        
+
     </data>
 </tryton>
